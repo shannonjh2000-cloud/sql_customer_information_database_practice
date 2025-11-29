@@ -1,0 +1,32 @@
+-- Examine the tables
+SELECT * FROM trips;
+SELECT * FROM riders;
+SELECT * FROM cars;
+
+-- Create a link between the trips and the cars 
+SELECT * FROM trips 
+JOIN cars
+   ON trips.car_id = cars.id;
+
+-- New rides have joined this month. Stack the riders table on top of the riders2 table.
+SELECT * FROM riders
+UNION
+SELECT * FROM riders2;
+
+-- What is the average cost of a trip?
+SELECT ROUND(AVG(cost), 2)
+FROM trips;
+
+-- UBER wants to do an email campaign for irregular users. Find all riders who have used UBER less than 500 times
+SELECT * FROM riders
+WHERE total_trips < 500;
+
+-- How many cars are active?
+SELECT COUNT(*)
+FROM cars
+WHERE status = 'active';
+
+-- Which 5 cars have the highest amount of trips completed? 
+SELECT * FROM cars
+ORDER BY trips_completed DESC
+LIMIT 5; 
