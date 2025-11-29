@@ -1,0 +1,80 @@
+-- Create new table
+CREATE TABLE customers (
+  id INTEGER, 
+  name TEXT,
+  birthday DATE,
+  address TEXT,
+);
+
+-- Add all the customer data 
+INSERT INTO friends (id, name, birthday) VALUES (1, 'Mia Carter', '1998-03-17', '124 Maple Grove Lane, Brookhaven, OR 97512');
+INSERT INTO friends (id, name, birthday) VALUES (2, 'Lucas Bennett', '2001-11-05', '89 Riverstone Court, Eastwood, TX 75421');
+INSERT INTO friends (id, name, birthday) VALUES (3, 'Ariana Sharma', '1999-07-22', '510 Silver Oak Drive, Crestview, IL 60142');
+INSERT INTO friends (id, name, birthday) VALUES (4, 'Daniel Kim', '1997-09-30', '23 Lantern Hill Road, Willowbrook, VA 22914');
+INSERT INTO friends (id, name, birthday) VALUES (5, 'Sofia Martinez', '2000-01-14', '771 Pinecrest Avenue, Northfield, CO 80827');
+INSERT INTO friends (id, name, birthday) VALUES (6, 'Ethan Reeves', '2002-04-09', '402 Meadow Springs Loop, Fairview, GA 30129');
+INSERT INTO friends (id, name, birthday) VALUES (7, 'Layla Thompson', '1996-12-18', '16 Horizon Ridge Street, Lakeside, NY 12802');
+INSERT INTO friends (id, name, birthday) VALUES (8, 'Noah Patel', '1999-07-22', '598 Orchard Bend Way, Millford, PA 18354');
+INSERT INTO friends (id, name, birthday) VALUES (9, 'Harper Collins', '2000-06-25', '245 Sunridge Terrace, Highland, AZ 85226');
+INSERT INTO friends (id, name, birthday) VALUES (10, 'Gabriel Russo', '1998-10-03', '37 Bluebell Crossing, Westhaven, MN 55902');
+
+-- Customer 3 requested to change their name from 'Ariana' to 'Ari'
+UPDATE customers
+SET name = 'Ari'
+WHERE id = 3;
+
+-- Customer 9 accidently ordered their delivery to their Grandma's house. Update their new delivery address
+UPDATE customers
+SET address = '912 Cedarwood Drive, Highland, AZ 44555'
+WHERE id = 9;
+
+-- Add customer contact information 
+ALTER TABLE customers
+ADD COLUMN email TEXT; 
+
+UPDATE customers
+SET email = 'Miapia111@gmail.com'
+WHERE id = 1;
+
+UPDATE customers
+SET email = 'Bennetl88@icloud.com'
+WHERE id = 2;
+
+UPDATE customers
+SET email = 'Arisha989@gmail.com'
+WHERE id = 3;
+
+UPDATE customers
+SET email = 'Kimmy555@gmail.com'
+WHERE id = 4;
+
+UPDATE customers
+SET email = 'Soffiemx@gmail.com'
+WHERE id = 5;
+
+UPDATE customers
+SET email = 'Ethanreeves44@gmail.com'
+WHERE id = 6;
+
+UPDATE customers
+SET email = 'Laylalat3@icloud.com'
+WHERE id = 7;
+
+UPDATE customers
+SET email = 'Noahoatelll00@gmail.com'
+WHERE id = 8;
+
+UPDATE customers
+SET email = 'Harpersnilloc66@gmail.com'
+WHERE id = 9;
+
+UPDATE customers
+SET email = 'Russogabriel75469@icloud.com'
+WHERE id = 10;
+
+-- Customer 5 has cancelled their order. Remove from the table.
+DELETE FROM customer
+WHERE id = 5;
+
+-- Show all current orders from customers 
+SELECT * FROM friends;
